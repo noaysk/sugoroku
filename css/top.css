@@ -1,24 +1,22 @@
-
-.container{
-    position: relative;
-
+.container {
+  position: relative;
 }
-img{
-    display: block;
-     margin:auto;
+img {
+  display: block;
+  margin: auto;
 }
-button{
-    position: absolute;
-    background: transparent;
-    border: 2px solid transparent;
-    top:90%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    font-size:45px;
-    font-weight: 700;
-    color: rgb(73, 46, 124);
+button {
+  position: absolute;
+  background: transparent;
+  border: 2px solid transparent;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(73, 46, 124);
 }
-button:hover{
-    font-size:55px;
-    cursor: pointer;
+button:hover {
+  font-size: 55px;
+  cursor: pointer;
 }
