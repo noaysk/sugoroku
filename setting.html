@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/setting.css" media="all">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/setting.css" media="all" />
 
     <title>Document</title>
-</head>
-<body>
-   
-</body>
-<script>
-    
-</script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>プレイヤー設定</h1>
+      <h2>~人数~</h2>
+      <div class="buttons">
+        <button type="button" onclick="prev()"><</button>
+        <span id="player-num">1</span>
+        <button type="button" onclick="next()">></button>
+      </div>
+      <div id="players" class="players">
+        <input type="text" id="player1" placeholder="名前" />
+      </div>
+      <button type="button" class="start">ゲーム開始</button>
+    </div>
+  </body>
+  <script>
+    function next() {
+      let num = document.getElementById("player-num");
+      num.innerText = parseInt(num.innerText) + 1;
+      const newInput = document.createElement("input");
+      newInput.setAttribute("id", "player" + num.innerText);
+      newInput.setAttribute("placeholder", "名前");
+      newInput.setAttribute("type", "text");
+
+      let players = document.getElementById("players");
+      players.appendChild(newInput);
+    }
+
+    function prev() {
+      let num = document.getElementById("player-num");
+
+      if (parseInt(num.innerText) === 1) {
+        return;
+      }
+
+      num.innerText = parseInt(num.innerText) - 1;
+
+      let element = document.getElementById(
+        "player" + (parseInt(num.innerText) + 1)
+      );
+      element.parentElement.removeChild(element);
+    }
+  </script>
 </html>
