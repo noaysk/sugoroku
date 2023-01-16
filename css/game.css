@@ -129,13 +129,17 @@
 
 .score {
   display: flex;
-  border: 3px solid #40FF75;
-  margin: 1em;
+  border: 5px solid #40ff75;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 1rem 5rem;
   width: 300px;
+  height: 250px;
   padding: 0.5em 1em;
   position: absolute;
   left: 50px;
   bottom: 30px;
+  text-align: center;
 }
 
 .score ul {
@@ -149,45 +153,68 @@
 
 .score li {
   display: flex;
-}
-
-.score .name {
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
+  margin: 0 20px;
 }
 
 .score li::before {
   content: "";
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
-} 
-
-.score li:nth-child(1):before {
-  background-color: green;
+  position: relative;
+  top: 8px;
+}
+.score .active::before {
+  position: relative;
+  top: 15px;
 }
 
-.score li:nth-child(2):before {
+.score li:nth-child(1):before {
   background-color: red;
 }
 
+.score li:nth-child(2):before {
+  background-color: blue;
+}
+
 .score li:nth-child(3):before {
-    background-color: blue;
+  background-color: yellow;
+}
+
+.score li:nth-child(4):before {
+  background-color: purple;
+}
+
+
+.score .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 30px;
+}
+
+.score .active .name {
+  font-size: 2rem;
 }
 
 .score .ato {
   padding-left: 2em;
   font-size: 8px;
-
-
 }
 
 .score .number {
-  font-size: 1.2em;
+  font-size: 2rem;
+  display:flex;
+  align-items: center;
+  margin: 0 5px;
 }
+.score .active .number {
+    font-size: 3rem;
+  }
+.score .left{
+display: flex;
+margin-left: auto;
+  }
 
 .turn {
   margin-top: 50px;
@@ -201,7 +228,7 @@
   gap: 3em;
   align-items: flex-end;
   position: absolute;
-  right: 50px;
+  right: 5rem;
   bottom: 30px;
 }
 .buttons > * {
