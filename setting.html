@@ -10,27 +10,33 @@
     <title>Document</title>
   </head>
   <body>
+
     <div class="container">
       <h1>プレイヤー設定</h1>
       <h2>~人数~</h2>
       <div class="buttons">
-        <button type="button" onclick="prev()"><</button>
-        <span id="player-num">1</span>
-        <button type="button" onclick="next()">></button>
+        <button class="angle" type="button" onclick="prev()"> < </button>
+        <span class="player-num" id="player-num">1</span>
+        <button  class="angle" type="button" onclick="next()">></button>
       </div>
       <div id="players" class="players">
-        <input type="text" id="player1" placeholder="名前" />
+        <input type="text" id="player1" placeholder="なまえ" />
       </div>
-      <button type="button" class="start">ゲーム開始</button>
+      <button type="button" class="start" onclick="location.href='game.html'">ゲーム開始</button>
     </div>
+
   </body>
   <script>
     function next() {
       let num = document.getElementById("player-num");
+      if (parseInt(num.innerText) === 5){
+        return;
+      }
+        
       num.innerText = parseInt(num.innerText) + 1;
       const newInput = document.createElement("input");
       newInput.setAttribute("id", "player" + num.innerText);
-      newInput.setAttribute("placeholder", "名前");
+      newInput.setAttribute("placeholder", "なまえ");
       newInput.setAttribute("type", "text");
 
       let players = document.getElementById("players");
