@@ -185,7 +185,6 @@
   background-color: purple;
 }
 
-
 .score .name {
   font-size: 1.5rem;
   font-weight: 600;
@@ -203,17 +202,17 @@
 
 .score .number {
   font-size: 2rem;
-  display:flex;
+  display: flex;
   align-items: center;
   margin: 0 5px;
 }
 .score .active .number {
-    font-size: 3rem;
-  }
-.score .left{
-display: flex;
-margin-left: auto;
-  }
+  font-size: 3rem;
+}
+.score .left {
+  display: flex;
+  margin-left: auto;
+}
 
 .turn {
   margin-top: 50px;
@@ -229,7 +228,6 @@ margin-left: auto;
   position: absolute;
   right: 5rem;
   margin: 2rem 5rem;
-
 }
 .buttons > * {
   display: flex;
@@ -241,16 +239,126 @@ margin-left: auto;
   cursor: pointer;
 }
 
-button:active {
-  background-color: gray;
-}
-
 .buttons .item {
   height: 150px;
   width: 150px;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .buttons .dice {
   height: 250px;
   width: 250px;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
+
+button:hover {
+  opacity: 0.7;
+}
+
+.item-hidden {
+  display: none;
+}
+
+#item-mask {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#item-modal {
+  background: #fff;
+  width: 50%;
+  height: 50%;
+  padding: 24px;
+  border-radius: 4px;
+  color: red;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+  overflow: scroll;
+  border: 8px solid red;
+
+}
+#item-modal img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 50px;
+}
+
+#item-modal p {
+  text-align: center;
+}
+#item-modal ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#item-modal li {
+  list-style: none;
+}
+
+
+.dice-hidden {
+    display: none;
+  }
+
+#dice-mask {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  #dice-modal {
+    background: #fff;
+    width: 50%;
+    height: 50%;
+    padding: 24px;
+    border-radius: 4px;
+    color: red;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 2;
+    overflow: scroll;
+    border: 8px solid red;
+  
+  }
+  #dice-modal img {
+    width: 150px;
+    margin: 50px;
+    height: 150px;
+    object-fit: contain;
+  }
+  
+  #dice-modal p {
+    text-align: center;
+  }
+  #dice-modal ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #dice-modal li {
+    list-style: none;
+  }
+  

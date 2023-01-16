@@ -30,20 +30,28 @@
       <div class="score">
         <ul>
           <li class="active">
-            <span class="name">たろう </span><div class="left"><span class="ato">あと</span
-            ><span class="number">6</span></div>
+            <span class="name">たろう </span>
+            <div class="left">
+              <span class="ato">あと</span><span class="number">6</span>
+            </div>
           </li>
           <li>
-            <span class="name">じろう</span><div class="left"><span class="ato">あと</span
-            ><span class="number">8</span></div>
+            <span class="name">じろう</span>
+            <div class="left">
+              <span class="ato">あと</span><span class="number">8</span>
+            </div>
           </li>
           <li>
-            <span class="name red">さぶろう</span><div class="left"><span class="ato">あと</span
-            ><span class="number">7</span></div>
+            <span class="name red">さぶろう</span>
+            <div class="left">
+              <span class="ato">あと</span><span class="number">7</span>
+            </div>
           </li>
           <li>
-            <span class="name">しろう</span><div class="left"><span class="ato">あと</span
-            ><span class="number">9</span></div>
+            <span class="name">しろう</span>
+            <div class="left">
+              <span class="ato">あと</span><span class="number">9</span>
+            </div>
           </li>
         </ul>
       </div>
@@ -51,9 +59,102 @@
       <p class="turn"><span>たろう</span> のターン</p>
 
       <div class="buttons">
-        <button class="item">アイテム</button>
-        <button class="dice">さいころ</button>
+        <div class="btn-container">
+          <button class="item" onclick="showItems(event)" id="item">
+            アイテム
+          </button>
+        </div>
+        <div class="btn-container">
+          <button class="dice" onclick="showDice(event)" id="dice">
+            さいころ
+          </button>
+        </div>
       </div>
     </div>
+
+    <div id="item-mask" class="item-hidden" onclick="hideItem(event)">
+      <section id="item-modal" class="item-hidden">
+        <ul>
+          <li>
+            <img src="img/banana.png" alt="" />
+            <p>バナナ</p>
+          </li>
+
+          <li>
+            <img src="img/carrot.png" alt="" />
+            <p>にんじん</p>
+          </li>
+          <li>
+            <img src="img/banana.png" alt="" />
+            <p>バナナ</p>
+          </li>
+          <li>
+            <img src="img/carrot.png" alt="" />
+            <p>にんじん</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
+      <section id="dice-modal" class="dice-hidden">
+        <ul>
+          <li>
+            <img src="img/double.png" alt="" />
+            <p>ダブルサイコロ</p>
+          </li>
+          <li>
+            <img src="img/double.png" alt="" />
+            <p>ダブルサイコロ</p>
+          </li>
+          <li>
+            <img src="img/double.png" alt="" />
+            <p>ダブルサイコロ</p>
+          </li>
+          <li>
+            <img src="img/double.png" alt="" />
+            <p>ダブルサイコロ</p>
+          </li>
+          <li>
+            <img src="img/double.png" alt="" />
+            <p>ダブルサイコロ</p>
+          </li>
+        </ul>
+      </section>
+    </div>
   </body>
+  <script>
+    const item = document.getElementById("item");
+    const itemMask = document.getElementById("item-mask");
+    const itemModal = document.getElementById("item-modal");
+    const dice = document.getElementById("dice");
+    const diceMask = document.getElementById("dice-mask");
+    const diceModal = document.getElementById("dice-modal");
+
+    function showItems(event) {
+      itemMask.classList.remove("item-hidden");
+      itemModal.classList.remove("item-hidden");
+    }
+    function hideItem(event) {
+      console.log(event.target.id);
+      if (event.target.id != "item-mask") {
+        return;
+      }
+      itemMask.classList.add("item-hidden");
+      itemModal.classList.add("item-hidden");
+    }
+
+    function showDice(event) {
+      diceMask.classList.remove("dice-hidden");
+      diceModal.classList.remove("dice-hidden");
+    }
+    function hideDice(event) {
+      console.log(event.target.id);
+      if (event.target.id != "dice-mask") {
+        return;
+      }
+      diceMask.classList.add("dice-hidden");
+      diceModal.classList.add("dice-hidden");
+    }
+  </script>
 </html>
