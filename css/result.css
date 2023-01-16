@@ -30,7 +30,7 @@ button {
   font-weight: 700;
   color: #fff;
 }
-button:hover{
-    font-size:45px;
-    cursor: pointer;
+button:hover {
+  font-size: 45px;
+  cursor: pointer;
 }
