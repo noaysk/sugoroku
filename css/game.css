@@ -18,7 +18,10 @@
   background-color: white;
   font-weight: bold;
   height: 8rem;
+  width: 18rem;
   border-radius: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .start {
@@ -120,6 +123,49 @@
   position: absolute;
   right: 0;
   transform: translateX(3rem);
+}
+.piece1 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0 30px;
+}
+.piece2 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0 30px;
+}
+.piece3 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin: 0 30px;
+}
+.piece4 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: purple;
+  margin: 0 30px;
+}
+.piece5 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: green;
+  margin: 0 30px;
+}
+.inactive {
+  filter: brightness(70%);
+}
+.sleep::after {
+  content: url(/img/zzzx.png);
+  position: absolute;
+  transform: translate(15px, -35px);
 }
 
 .flex {
@@ -289,7 +335,6 @@ button:hover {
   z-index: 2;
   overflow: scroll;
   border: 8px solid red;
-
 }
 #item-modal img {
   width: 150px;
@@ -310,22 +355,22 @@ button:hover {
   list-style: none;
 }
 
-
 .dice-hidden {
-    display: none;
-  }
+  display: none;
+}
 
 #dice-mask {
-    background: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-  }
-  
-  #dice-modal {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* サイコロ用 */
+/* #dice-modal {
     background: #fff;
     width: 50%;
     height: 50%;
@@ -341,15 +386,13 @@ button:hover {
     z-index: 2;
     overflow: scroll;
     border: 8px solid red;
-  
-  }
+  } 
   #dice-modal img {
     width: 150px;
     margin: 50px;
     height: 150px;
     object-fit: contain;
   }
-  
   #dice-modal p {
     text-align: center;
   }
@@ -361,4 +404,40 @@ button:hover {
   #dice-modal li {
     list-style: none;
   }
-  
+  */
+
+#dice-modal {
+  background: #fff;
+  width: 50%;
+  height: 50%;
+  padding: 24px;
+  border-radius: 30px;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  margin: 0 auto;
+  z-index: 2;
+  border: 8px solid green;
+
+}
+#dice-modal p{
+  display:flex;
+  flex-flow: column;
+}
+
+#dice-modal p .masu_name {
+  font-size: 30px;
+  margin: 10px 0 50px 10px;
+}
+#dice-modal p .reason {
+  font-size: 60px;
+  text-align: center;
+    margin: 10px 0 50px 10px;
+
+}
+#dice-modal p .masu_action {
+  font-size: 80px;
+  font-weight: 800;
+  text-align: center;
+}

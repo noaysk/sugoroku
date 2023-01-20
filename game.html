@@ -11,14 +11,44 @@
   <body>
     <div class="board">
       <div class="start">スタート</div>
-      <div class="tile">1</div>
-      <div class="tile">2</div>
-      <div class="tile">3</div>
+      <div class="tile">
+        <div class="piece1"></div>
+        <div class="piece2"></div>
+        <div class="piece3"></div>
+        <div class="piece4"></div>
+        <div class="piece5"></div>
+      </div>
+      <div class="tile">
+        <div class="piece1 inactive"></div>
+        <div class="piece2 inactive"></div>
+        <div class="piece3 inactive"></div>
+        <div class="piece4 inactive"></div>
+        <div class="piece5 inactive"></div>
+      </div>
+      <div class="tile">
+        <div class="piece1 sleep"></div>
+        <div class="piece2 sleep"></div>
+        <div class="piece3 sleep"></div>
+        <div class="piece4 sleep"></div>
+        <div class="piece5 sleep"></div>
+      </div>
 
-      <div class="tile">4</div>
-      <div class="tile">5</div>
-      <div class="tile">6</div>
-      <div class="tile">7</div>
+      <div class="tile"><div class="piece1"></div></div>
+      <div class="tile">
+        <div class="piece1"></div>
+        <div class="piece2"></div>
+      </div>
+      <div class="tile">
+        <div class="piece1"></div>
+        <div class="piece2"></div>
+        <div class="piece3"></div>
+      </div>
+      <div class="tile">
+        <div class="piece1"></div>
+        <div class="piece2"></div>
+        <div class="piece3"></div>
+        <div class="piece4"></div>
+      </div>
 
       <div class="tile">8</div>
       <div class="tile">9</div>
@@ -96,7 +126,8 @@
       </section>
     </div>
 
-    <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
+    <!-- サイコロ用 -->
+    <!-- <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
       <section id="dice-modal" class="dice-hidden">
         <ul>
           <li>
@@ -120,6 +151,16 @@
             <p>ダブルサイコロ</p>
           </li>
         </ul>
+      </section>
+    </div> -->
+
+    <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
+      <section id="dice-modal" class="dice-hidden">
+        <p>
+          <span class="masu_name">ハプニングマス</span>
+          <span class="reason">急な筋肉痛で動けない!</span>
+          <span class="masu_action">1回休み</span>
+        </p>
       </section>
     </div>
   </body>
