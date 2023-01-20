@@ -12,47 +12,70 @@
     <div class="board">
       <div class="start">スタート</div>
       <div class="tile">
-        <div class="piece1"></div>
-        <div class="piece2"></div>
-        <div class="piece3"></div>
-        <div class="piece4"></div>
-        <div class="piece5"></div>
+        <div class="flex">
+          <div class="piece1"></div>
+          <div class="piece2"></div>
+          <div class="piece3"></div>
+          <div class="piece4"></div>
+        </div>
       </div>
       <div class="tile">
-        <div class="piece1 inactive"></div>
-        <div class="piece2 inactive"></div>
-        <div class="piece3 inactive"></div>
-        <div class="piece4 inactive"></div>
-        <div class="piece5 inactive"></div>
+        <div class="flex">
+          <div class="piece1 inactive"></div>
+          <div class="piece2 inactive"></div>
+          <div class="piece3 inactive"></div>
+          <div class="piece4 inactive"></div>
+        </div>
+        <p class="event">1回休み</p>
       </div>
       <div class="tile">
-        <div class="piece1 sleep"></div>
-        <div class="piece2 sleep"></div>
-        <div class="piece3 sleep"></div>
-        <div class="piece4 sleep"></div>
-        <div class="piece5 sleep"></div>
+        <div class="flex"></div>
+        <p class="event">1回休み</p>
       </div>
 
-      <div class="tile"><div class="piece1"></div></div>
       <div class="tile">
-        <div class="piece1"></div>
-        <div class="piece2"></div>
+        <div class="flex">
+          <div class="piece1"></div>
+        </div>
+        <p class="event">1回休み</p>
       </div>
       <div class="tile">
-        <div class="piece1"></div>
-        <div class="piece2"></div>
-        <div class="piece3"></div>
+        <div class="flex">
+          <div class="piece1"></div>
+          <div class="piece2"></div>
+        </div>
+        <p class="event">1回休み</p>
       </div>
       <div class="tile">
-        <div class="piece1"></div>
-        <div class="piece2"></div>
-        <div class="piece3"></div>
-        <div class="piece4"></div>
+        <div class="flex">
+          <div class="piece1"></div>
+          <div class="piece2"></div>
+          <div class="piece3"></div>
+        </div>
+        <p class="event">1回休み</p>
+      </div>
+      <div class="tile">
+        <div class="flex">
+          <div class="piece1"></div>
+          <div class="piece2"></div>
+          <div class="piece3"></div>
+          <div class="piece4"></div>
+        </div>
+        <p class="event">1回休み</p>
       </div>
 
-      <div class="tile">8</div>
-      <div class="tile">9</div>
-      <div class="tile">10</div>
+      <div class="tile">
+        <div class="flex"></div>
+      </div>
+      <div class="tile">
+        <div class="flex"></div>
+        <p class="event">1回休み</p>
+      </div>
+      <div class="tile">
+        <div class="flex">
+          <div class="piece4 inactive"></div>
+        </div>
+      </div>
       <div class="goal">ゴール</div>
     </div>
 
@@ -60,24 +83,30 @@
       <div class="score">
         <ul>
           <li class="active">
+            <div class="piece1 inactive"></div>
             <span class="name">たろう </span>
             <div class="left">
               <span class="ato">あと</span><span class="number">6</span>
             </div>
           </li>
           <li>
+            <div class="piece2 inactive"></div>
+
             <span class="name">じろう</span>
             <div class="left">
               <span class="ato">あと</span><span class="number">8</span>
             </div>
           </li>
           <li>
+            <div class="piece3"></div>
+
             <span class="name red">さぶろう</span>
             <div class="left">
               <span class="ato">あと</span><span class="number">7</span>
             </div>
           </li>
           <li>
+            <div class="piece4"></div>
             <span class="name">しろう</span>
             <div class="left">
               <span class="ato">あと</span><span class="number">9</span>
@@ -106,17 +135,17 @@
       <section id="item-modal" class="item-hidden">
         <ul>
           <li>
-            <img src="img/banana.png" alt="" />
-            <p>バナナ</p>
+            <img src="img/jisyaku.png" alt="" class="jisyaku"/>
+            <p>じしゃく</p>
           </li>
 
           <li>
-            <img src="img/carrot.png" alt="" />
-            <p>にんじん</p>
+            <img src="img/bakudan.png" alt=""  class="bakudan"/>
+            <p>ばくだん</p>
           </li>
           <li>
-            <img src="img/banana.png" alt="" />
-            <p>バナナ</p>
+            <img src="img/tatsumaki.png" alt=""  class="tatsumaki"/>
+            <p>たつまき</p>
           </li>
           <li>
             <img src="img/carrot.png" alt="" />
@@ -154,7 +183,8 @@
       </section>
     </div> -->
 
-    <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
+    <!-- マスイベント -->
+    <!-- <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
       <section id="dice-modal" class="dice-hidden">
         <p>
           <span class="masu_name">ハプニングマス</span>
@@ -162,7 +192,18 @@
           <span class="masu_action">1回休み</span>
         </p>
       </section>
+    </div> -->
+
+    <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
+      <section id="dice-modal" class="dice-hidden">
+        <div class="goal-pop">
+          <span class="name">さぶろう</span>がゴール!
+        </div>
+        <button class="goal-button" onclick="hideDice()" id="close-button">つぎへ</button>
+      </section>
     </div>
+
+    
   </body>
   <script>
     const item = document.getElementById("item");
@@ -191,9 +232,10 @@
     }
     function hideDice(event) {
       console.log(event.target.id);
-      if (event.target.id != "dice-mask") {
+      if (event.target.id != "dice-mask" && event.target.id != "close-button"){
         return;
       }
+
       diceMask.classList.add("dice-hidden");
       diceModal.classList.add("dice-hidden");
     }
