@@ -84,9 +84,9 @@
         <ul>
           <li class="active">
             <div class="piece1 inactive"></div>
-            <span class="name">たろう </span>
+            <span class="name">たろうううう</span>
             <div class="left">
-              <span class="ato">あと</span><span class="number">6</span>
+              <span class="ato">あと</span><span class="number">16</span>
             </div>
           </li>
           <li>
@@ -134,17 +134,19 @@
     <div id="item-mask" class="item-hidden" onclick="hideItem(event)">
       <section id="item-modal" class="item-hidden">
         <ul>
-          <li>
-            <img src="img/jisyaku.png" alt="" class="jisyaku"/>
+          <li class="item">
+            <img src="img/jisyaku.png" alt="" class="jisyaku" />
             <p>じしゃく</p>
+            <div class="item__text">
+              <p>ddddd</p>
+            </div>
           </li>
-
           <li>
-            <img src="img/bakudan.png" alt=""  class="bakudan"/>
+            <img src="img/bakudan.png" alt="" class="bakudan" />
             <p>ばくだん</p>
           </li>
           <li>
-            <img src="img/tatsumaki.png" alt=""  class="tatsumaki"/>
+            <img src="img/tatsumaki.png" alt="" class="tatsumaki" />
             <p>たつまき</p>
           </li>
           <li>
@@ -196,14 +198,12 @@
 
     <div id="dice-mask" class="dice-hidden" onclick="hideDice(event)">
       <section id="dice-modal" class="dice-hidden">
-        <div class="goal-pop">
-          <span class="name">さぶろう</span>がゴール!
-        </div>
-        <button class="goal-button" onclick="hideDice()" id="close-button">つぎへ</button>
+        <div class="goal-pop"><span class="name">さぶろう</span>がゴール!</div>
+        <button class="goal-button" onclick="hideDice()" id="close-button">
+          つぎへ
+        </button>
       </section>
     </div>
-
-    
   </body>
   <script>
     const item = document.getElementById("item");
@@ -232,7 +232,7 @@
     }
     function hideDice(event) {
       console.log(event.target.id);
-      if (event.target.id != "dice-mask" && event.target.id != "close-button"){
+      if (event.target.id != "dice-mask" && event.target.id != "close-button") {
         return;
       }
 
