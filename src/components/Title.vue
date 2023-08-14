@@ -41,6 +41,7 @@
     img {
     display: block;
     margin: auto;
+    height: 800px;
     }
     button {
     position: absolute;
